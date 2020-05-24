@@ -29,10 +29,11 @@ class IndexControllerTest {
 	@DisplayName("Teste de exception")
 	@Test
 	void testOupsHandler() {
-		assertTrue("notimplemented".equals(controller.oupsHandler()), () -> "Esta é uma" +
-	" mensagem muito "+
-				"custosa de se testar");
-		//Exemplo de lambda expression
+		assertThrows(ValueNotFoundException.class,
+			() -> {
+				controller.oopsHandler();
+			}
+		);
 	}
 
 }
