@@ -1,5 +1,6 @@
 package guru.springframework.sfgpetclinic.controllers;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assumptions.assumeTrue;
 
@@ -33,6 +34,8 @@ class IndexControllerTest {
 		
 		assertEquals("index", controller.index(), () -> "Outra Mensagem Cara "+
 		" pacas");
+		
+		assertThat(controller.index()).isEqualTo("index");
 	}
 
 	@DisplayName("Teste de exception")
