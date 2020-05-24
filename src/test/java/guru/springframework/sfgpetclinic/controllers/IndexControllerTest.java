@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 class IndexControllerTest {
@@ -15,15 +16,17 @@ class IndexControllerTest {
 		controller = new IndexController();
 	}
 
+	@DisplayName("Teste que verifica o nome da View retornada para a página index")
 	@Test
 	void testIndex() {
 		assertEquals("index", controller.index());
 		assertEquals("index", controller.index(), "### View Errada Retornada ###");
 		
-		assertEquals("indexaa", controller.index(), () -> "Outra Mensagem Cara "+
+		assertEquals("index", controller.index(), () -> "Outra Mensagem Cara "+
 		" pacas");
 	}
 
+	@DisplayName("Teste de exception")
 	@Test
 	void testOupsHandler() {
 		assertTrue("notimplemented".equals(controller.oupsHandler()), () -> "Esta é uma" +
