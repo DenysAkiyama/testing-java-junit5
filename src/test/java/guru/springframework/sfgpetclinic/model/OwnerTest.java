@@ -8,6 +8,8 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 import guru.springframework.sfgpetclinic.ModelTests;
 
@@ -49,6 +51,12 @@ class OwnerTest implements ModelTests{
 	void testIndexWithHamcrest() {
 		owner.setCity("Gotham");
 		assertThat(owner.getCity(), is("Gotham"));
+	}
+	
+	@ParameterizedTest
+	@ValueSource(strings = {"Spring", "Framework", "Guru"})
+	void testValueSource(String val) {
+		System.out.println(val);
 	}
 
 }
