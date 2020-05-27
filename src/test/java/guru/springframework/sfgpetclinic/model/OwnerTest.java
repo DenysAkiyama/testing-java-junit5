@@ -53,7 +53,8 @@ class OwnerTest implements ModelTests{
 		assertThat(owner.getCity(), is("Gotham"));
 	}
 	
-	@ParameterizedTest
+	@DisplayName("Value Source Test ")
+	@ParameterizedTest(name = "{displayName} - [{index}] {arguments}")
 	@ValueSource(strings = {"Spring", "Framework", "Guru"})
 	void testValueSource(String val) {
 		System.out.println(val);
