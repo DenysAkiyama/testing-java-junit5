@@ -10,8 +10,9 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
-@Tag("model")
-class OwnerTest {
+import guru.springframework.sfgpetclinic.ModelTests;
+
+class OwnerTest implements ModelTests{
 	Owner owner;
 	@BeforeEach
 	void setUp() throws Exception {
