@@ -4,7 +4,9 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.RepeatedTest;
+import org.junit.jupiter.api.RepetitionInfo;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInfo;
 
 import guru.springframework.sfgpetclinic.ModelTests;
 
@@ -37,4 +39,10 @@ class PersonTest implements ModelTests{
 	void myRepeatedTest() {
 		//Todo - impl
 	}
+	
+	@RepeatedTest(5)
+	void myRepeatedTestWithDI(TestInfo testInfo, RepetitionInfo repetitionInfo) {
+		System.out.println(testInfo.getDisplayName() + ": "+ repetitionInfo.getCurrentRepetition());
+	}
+	
 }
