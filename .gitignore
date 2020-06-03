@@ -139,3 +139,15 @@ Desktop.ini
 # ESLint
 ######################
 .eslintcache
+
+######################
+# Outros
+######################
+backport-util-concurrent/
+classworlds/
+com/
+commons-cli/
+commons-io/
+javax/
+junit/
+org/
