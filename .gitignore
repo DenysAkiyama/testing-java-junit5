@@ -125,6 +125,8 @@ Desktop.ini
 *~
 .merge_file*
 
+commons-lang/
+
 ######################
 # Gradle Wrapper
 ######################
